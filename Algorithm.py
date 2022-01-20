@@ -314,8 +314,8 @@ def reverse(a):
     return True
 
 
-print(reverse('redder'))
-print(reverse('alpha'))
+# print(reverse('redder'))
+# print(reverse('alpha'))
 
 
 def intersection(a, b):
@@ -327,4 +327,4 @@ def intersection(a, b):
     return result
 
 
-print(intersection([1, 5, 9, 6, 5, 2], [5, 9, 8, 2, 10, 9]))
+# print(intersection([1, 5, 9, 6, 5, 2], [5, 9, 8, 2, 10, 9]))

@@ -46,6 +46,7 @@ book[start_x][start_y] = 1
 
 while head < tail:
     for i in range(4):
+        print(que.x[head], que.y[head])
         tx = que.x[head]+next[i][0]
         ty = que.y[head]+next[i][1]
 
@@ -71,3 +72,16 @@ while head < tail:
 print(que.s[tail-1])
 print(que.x)
 print(que.y)
+
+#BFS and Quene
+
+
+class Quene():
+    def __init__(self):
+        self.arr = []
+
+    def pop(self):
+        return self.arr.pop()
+
+    def add(self, n):
+        self.arr.append(n)
