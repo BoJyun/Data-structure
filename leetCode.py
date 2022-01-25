@@ -13,7 +13,7 @@ class ListNode:
 
 
 # Merge Two Sorted Lists
-def leetCode21(l1: Optional[ListNode], l2: Optional[ListNode]):
+def leetCode21():
     temp = ListNode(None)
     prev = temp
 
@@ -33,7 +33,29 @@ def leetCode21(l1: Optional[ListNode], l2: Optional[ListNode]):
     return prev.next
 
 
-def leeteCode(head: Optional[ListNode]):
+def leeteCode94():  # -> List[int]:
+    arr = []
+    stack = []
+    # def traverse(root):
+    #     if root==None:
+    #         return
+    #     traverse(root.left)
+    #     arr.append(root.val)
+    #     traverse(root.right)
+    # traverse(root)
+
+    while root or stack:
+        while root:
+            stack.append(root)
+            root = root.left
+        root = stack.pop()
+        arr.append(root.val)
+        root = root.right
+
+    return arr
+
+
+def leeteCode24():
     dummy = ListNode(None)
     dummy.next = head
     current = dummy
@@ -47,6 +69,21 @@ def leeteCode(head: Optional[ListNode]):
         current = current.next.next
 
     return dummy.next
+
+
+def leeteCode997(n, trust):
+    person = []
+    for i in range(n):
+        person.append([0, 0])  # trust trusted
+
+    for i in trust:
+        person[i[0]-1][0] += 1
+        person[i[1]-1][1] += 1
+
+    for i in range(0, n):
+        if person[i][0] == 0 and person[i][1] == n-1:
+            return i+1
+    return -1
 
 
 def leetCode26(lst):  # in-place algorithm
@@ -107,6 +144,7 @@ def leeteCode26(arr):
 
 
 if __name__ == '__main__':
-    a = leeteCode26([1, 2, 2, 2, 2, 2, 2, 4, 6, 7, 8, 9, 9, 9, 9])
+    # a = leeteCode26([1, 2, 2, 2, 2, 2, 2, 4, 6, 7, 8, 9, 9, 9, 9])
     # a = leeteCode26([1, 2, 2, 2, 4, 6, 7, 8, 9, 9, 9, 9])
+    a = leeteCode997(2, [[1, 2]])
     print(a)
